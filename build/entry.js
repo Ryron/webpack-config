@@ -1,5 +1,6 @@
 const fs = require('fs')
 function getEntries(path) {
+    console.log(path);
     let test = /(.*)\.js$/;
     let entries = {};
     fs.readdirSync(path).forEach((file) => {

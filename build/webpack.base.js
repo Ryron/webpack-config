@@ -7,8 +7,10 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 
+console.log(path.join(__dirname, '..', 'entry/'));
+
 const config = {
-    entry: getEntries('./entry'),
+    entry: getEntries(path.join(__dirname, '..', 'entry/')),
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].js'

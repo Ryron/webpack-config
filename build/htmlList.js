@@ -1,10 +1,11 @@
+const path = require('path');
 const getEntries = require('./entry');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const entries = getEntries('./entry');
+const entries = getEntries(path.join(__dirname, '..', 'entry/'));
 
 let htmlList = Object.keys(entries).map((entry) => {
     return new HtmlWebpackPlugin({
-        template: './index.html',
+        template: path.resolve(__dirname, '../index.html'),
         filename: `${entry}.html`,
         chunks: ['common', entry],
     });
